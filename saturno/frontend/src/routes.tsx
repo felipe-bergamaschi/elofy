@@ -5,7 +5,8 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const File1 = lazy(() => import('./app/index'));
-const File2 = lazy(() => import('./app/pets'));
+const File2 = lazy(() => import('./app/pa'));
+const File3 = lazy(() => import('./app/pets'));
 
 
 
@@ -36,6 +37,12 @@ export function AppRoutes({ custom404: Custom404, customLoading: CustomLoading }
         
           <Route 
             element={<File2 />} 
+            path="/pa" 
+            key="/pa"  
+          />
+        
+          <Route 
+            element={<File3 />} 
             path="/pets" 
             key="/pets"  
           />
