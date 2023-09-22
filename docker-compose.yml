@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mysql-saturno:
+    image: mysql:latest
+    container_name: laravel-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_USER: root
+      MYSQL_DATABASE: saturno
+    ports:
+      - "3306:3306"
+
+  mysql-jupiter:
+    image: mysql:latest
+    container_name: jupiter-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_USER: root
+      MYSQL_DATABASE: jupiter
+    ports:
+      - "3306:3306"

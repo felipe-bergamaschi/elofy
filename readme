@@ -1,0 +1,5 @@
+php artisan make:controller Name --api
+
+php artisan make:model Name --migrate
+
+php artisan migrate
