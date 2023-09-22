@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Pet;
 use App\Http\Controllers\Driver;
+use App\Http\Controllers\Auth;
+
+Route::post('/auth', [Auth::class, 'auth']);
 
 Route::get('/driver', [Driver::class, 'index']);
 Route::post('/driver', [Driver::class, 'store']);
