@@ -4,6 +4,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Pet;
+use App\Http\Controllers\Driver;
+
+Route::get('/driver', [Driver::class, 'index']);
+Route::post('/driver', [Driver::class, 'store']);
 
 Route::get('/pet', [Pet::class, 'index']);
 Route::get('/pet/{id}', [Pet::class, 'show']);
