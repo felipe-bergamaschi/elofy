@@ -1,9 +1,8 @@
 import Axios, { AxiosError, AxiosRequestConfig } from 'axios';
-import { servers } from '../../swagger.json';
 
-const API_BASE_URL = servers[0].url;
+const API_BASE_URL = "http://localhost:8000/api/"
 
-export const AxiosInstance = Axios.create({
+export const api = Axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json'
@@ -13,7 +12,7 @@ export const AxiosInstance = Axios.create({
 export function request<T>(config: AxiosRequestConfig): Promise<T> {
   const source = Axios.CancelToken.source();
 
-  const promise = AxiosInstance({
+  const promise = api({
     ...config,
     cancelToken: source.token,
   }).then(({ data }) => data);
